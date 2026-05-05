@@ -6,22 +6,27 @@ import ResearchLines from './components/ResearchLines';
 import Capabilities from './components/Capabilities';
 import PrincipalInvestigator from './components/PrincipalInvestigator';
 import Team from './components/Team';
+import Publications from './components/Publications';
 import Footer from './components/Footer';
+import { TranslationProvider } from './components/TranslationContext';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navigation />
-      <main className="flex-grow">
-        <Hero />
-        <Identity />
-        <ResearchLines />
-        <Capabilities />
-        <PrincipalInvestigator />
-        <Team />
-      </main>
-      <Footer />
-    </div>
+    <TranslationProvider>
+      <div className="min-h-screen flex flex-col">
+        <Navigation />
+        <main className="flex-grow">
+          <Hero />
+          <Identity />
+          <ResearchLines />
+          <Capabilities />
+          <PrincipalInvestigator />
+          <Team />
+          <Publications />
+        </main>
+        <Footer />
+      </div>
+    </TranslationProvider>
   );
 };
 

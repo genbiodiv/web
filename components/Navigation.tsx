@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Dna } from 'lucide-react';
+import { Menu, X, Dna, Globe } from 'lucide-react';
+import { useTranslation } from './TranslationContext';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { language, setLanguage, t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,10 +16,12 @@ const Navigation: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Nuestro Grupo', href: '#identidad' },
-    { name: 'Investigación', href: '#investigacion' },
-    { name: 'Capacidades', href: '#capacidades' },
-    { name: 'Contacto', href: '#footer' },
+    { name: t('nav.identity'), href: '#identidad' },
+    { name: t('nav.research'), href: '#investigacion' },
+    { name: t('nav.capabilities'), href: '#capacidades' },
+    { name: t('nav.publications'), href: '#publicaciones' },
+    { name: t('nav.team'), href: '#equipo' },
+    { name: t('nav.contact'), href: '#footer' },
   ];
 
   const scrollTo = (id: string) => {
@@ -39,7 +43,7 @@ const Navigation: React.FC = () => {
             </span>
           </div>
           
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <button
                 key={link.name}
@@ -49,9 +53,27 @@ const Navigation: React.FC = () => {
                 {link.name}
               </button>
             ))}
+
+            <button
+              onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all ${
+                scrolled 
+                  ? 'border-slate-200 text-slate-600 hover:bg-slate-50' 
+                  : 'border-slate-300 text-slate-700 hover:bg-white/50'
+              }`}
+            >
+              <Globe className="w-4 h-4" />
+              <span className="text-xs font-bold uppercase">{language === 'es' ? 'EN' : 'ES'}</span>
+            </button>
           </div>
 
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-4">
+            <button
+              onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
+              className="p-2 text-slate-600 hover:bg-slate-100 rounded-full"
+            >
+              <Globe className="w-5 h-5" />
+            </button>
             <button onClick={() => setIsOpen(!isOpen)} className="text-slate-800 focus:outline-none">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>

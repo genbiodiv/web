@@ -1,7 +1,10 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
+import { useTranslation } from './TranslationContext';
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
+
   const scrollToResearch = () => {
     const element = document.querySelector('#investigacion');
     if (element) {
@@ -21,19 +24,19 @@ const Hero: React.FC = () => {
           Universidad del Norte &bull; Barranquilla
         </h2>
         <h1 className="text-5xl md:text-8xl font-serif font-medium text-slate-900 mb-8 leading-[0.9]">
-          Genómica y<br/>
-          <span className="italic text-emerald-900">Biodiversidad</span><br/>
-          del Caribe
+          {t('hero.title')}<br/>
+          <span className="italic text-emerald-900">{t('hero.title.italic')}</span><br/>
+          {t('hero.title.suffix')}
         </h1>
         <p className="text-lg md:text-xl text-slate-600 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
-          Desde la evolución de nuevos genes hasta la ecología de los bosques secos, buscamos respuestas integrales.
+          {t('hero.subtitle')}
         </p>
         
         <button 
           onClick={scrollToResearch}
           className="group inline-flex items-center gap-3 text-slate-900 border-b border-slate-900 pb-1 text-sm font-medium transition-all hover:text-emerald-700 hover:border-emerald-700"
         >
-          Explorar Líneas de Investigación
+          {t('hero.cta')}
           <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
         </button>
       </div>
