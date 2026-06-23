@@ -405,10 +405,10 @@ const TeamDirectory: React.FC = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <span className="text-xs font-semibold tracking-wider text-emerald-800 uppercase block mb-2 font-mono">
-                {language === 'es' ? 'Directorio de Investigadores' : 'Researchers Directory'}
+                {language === 'es' ? 'Miembros activos' : 'Active Members'}
               </span>
               <h1 className="text-3xl md:text-5xl font-serif text-slate-900 leading-tight">
-                {language === 'es' ? 'Investigadores y Colaboradores' : 'Researchers & Contributors'}
+                {language === 'es' ? 'Miembros activos y sus proyectos' : 'Active members and their projects'}
               </h1>
             </div>
             <div className="text-slate-500 text-sm font-medium font-mono bg-white border border-slate-100 rounded-full py-1.5 px-4 shadow-sm inline-block self-start">
