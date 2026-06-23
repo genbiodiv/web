@@ -10,7 +10,7 @@ const Identity: React.FC = () => {
         <div className="mb-10 flex justify-center">
             <div className="w-px h-16 bg-emerald-600"></div>
         </div>
-        <p className="text-2xl md:text-4xl font-light leading-tight text-slate-900 serif">
+        <p className="text-2xl md:text-4xl font-light leading-tight text-slate-900 font-sans">
           {t('identity.main')} <span className="italic text-emerald-800">{t('identity.emphasis')}</span>.
         </p>
         <div className="mt-10 space-y-6">

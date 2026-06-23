@@ -25,10 +25,10 @@ const Hero: React.FC = () => {
         </h2>
         <h1 className="text-5xl md:text-8xl font-serif font-medium text-slate-900 mb-8 leading-[0.9]">
           {t('hero.title')}<br/>
-          <span className="italic text-emerald-900">{t('hero.title.italic')}</span><br/>
+          <span className="text-emerald-600">{t('hero.title.italic')}</span><br/>
           {t('hero.title.suffix')}
         </h1>
-        <p className="text-lg md:text-xl text-slate-600 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="font-serif text-lg md:text-xl text-slate-700 font-normal max-w-2xl mx-auto mb-12 leading-relaxed">
           {t('hero.subtitle')}
         </p>
         

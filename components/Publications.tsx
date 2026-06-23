@@ -13,6 +13,20 @@ interface Publication {
 
 const publications: Publication[] = [
   {
+    title: "Morphological, Molecular, and Isotopic Approaches to Termite Ecology: A Mangrove Case Study",
+    authors: "R Casalla, R Neme, J Korb",
+    journal: "Biotropica 58 (3), e70199",
+    year: "2026",
+    link: "#"
+  },
+  {
+    title: "Socioeconomic Barriers Shape the Urban Distribution of an Invasive Frog: A Case Study from Barranquilla, Colombia",
+    authors: "LF Bustamante-Narváez, D Grandas-Gaona, VM Gonzalez, ...",
+    journal: "Research Initiative",
+    year: "2026",
+    link: "#"
+  },
+  {
     title: "Taxonomic Diversity of Ants (Formicidae) in Forest Fragments of Tropical Dry Forest in Atlántico, Colombia",
     authors: "D Grandas-Gaona, D Posada-Echeverría, V Machacón, R Sarmiento, ...",
     journal: "bioRxiv, 2025.08. 13.670019",
@@ -38,8 +52,8 @@ const publications: Publication[] = [
   {
     title: "Decoding biodiversity patterns and community structure of the lower Magdalena River (Colombia) using environmental DNA",
     authors: "J Moreno-Tilano, S Zong, M Goralczyk, V Marques, MA Gonzalez, ...",
-    journal: "bioRxiv",
-    year: "2024",
+    journal: "Authorea",
+    year: "2025",
     link: "#"
   },
   {

@@ -9,16 +9,58 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
+      @font-face {
+        font-family: 'Astonpoliz';
+        src: url('fonts/Astonpoliz.ttf') format('truetype'),
+             url('fonts/Astonpoliz.otf') format('opentype'),
+             url('/fonts/Astonpoliz.ttf') format('truetype'),
+             url('/fonts/Astonpoliz.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Astonpoliz';
+        src: url('fonts/Astonpoliz.ttf') format('truetype'),
+             url('fonts/Astonpoliz.otf') format('opentype'),
+             url('/fonts/Astonpoliz.ttf') format('truetype'),
+             url('/fonts/Astonpoliz.otf') format('opentype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Astonpoliz';
+        src: url('fonts/Astonpoliz.ttf') format('truetype'),
+             url('fonts/Astonpoliz.otf') format('opentype'),
+             url('/fonts/Astonpoliz.ttf') format('truetype'),
+             url('/fonts/Astonpoliz.otf') format('opentype');
+        font-weight: 300 900;
+        font-style: normal;
+        font-display: swap;
+      }
       body {
         font-family: 'Inter', sans-serif;
       }
-      h1, h2, h3, .serif {
-        font-family: 'Playfair Display', serif;
+      h1, h2, h3, .serif, .font-serif {
+        font-family: 'Astonpoliz', 'Playfair Display', serif !important;
       }
       .scroll-smooth {
         scroll-behavior: smooth;
       }
     </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['Astonpoliz', 'Playfair Display', 'serif'],
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
   <script type="importmap">
 {
   "imports": {

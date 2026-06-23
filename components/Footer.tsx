@@ -7,17 +7,9 @@ const Footer: React.FC = () => {
   return (
     <footer id="footer" className="bg-slate-900 text-slate-400 py-16">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             
-            {/* Column 1: Identity */}
-            <div>
-                <h4 className="text-white font-serif text-xl mb-4">{t('hero.title')}<br/><span className="italic text-emerald-500">{t('hero.title.suffix')}</span></h4>
-                <p className="text-sm leading-relaxed max-w-xs">
-                    {t('identity.p1')}
-                </p>
-            </div>
-
-            {/* Column 2: Links */}
+            {/* Column 1: Links */}
             <div>
                 <h5 className="text-xs font-bold text-white uppercase tracking-widest mb-6">{t('nav.research')}</h5>
                 <ul className="space-y-3 text-sm">
@@ -27,7 +19,7 @@ const Footer: React.FC = () => {
                 </ul>
             </div>
 
-            {/* Column 3: Contact */}
+            {/* Column 2: Contact */}
             <div>
                  <h5 className="text-xs font-bold text-white uppercase tracking-widest mb-6">{t('footer.contact')}</h5>
                  <address className="not-italic text-sm space-y-2">

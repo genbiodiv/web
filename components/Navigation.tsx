@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Dna, Globe } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { useTranslation } from './TranslationContext';
 
 const Navigation: React.FC = () => {
@@ -25,10 +25,22 @@ const Navigation: React.FC = () => {
   ];
 
   const scrollTo = (id: string) => {
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    const isOnDetailedPage = window.location.hash === '#equipo-completo';
+    if (isOnDetailedPage) {
+      window.location.hash = id;
+      setTimeout(() => {
+        const element = document.querySelector(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 150);
       setIsOpen(false);
+    } else {
+      const element = document.querySelector(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsOpen(false);
+      }
     }
   };
 
@@ -37,9 +49,8 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center cursor-pointer" onClick={() => scrollTo('#hero')}>
-            <Dna className={`h-8 w-8 ${scrolled ? 'text-emerald-800' : 'text-emerald-900'} mr-2`} />
-            <span className={`text-xl font-bold tracking-tight ${scrolled ? 'text-slate-800' : 'text-slate-900'}`}>
-              GyB <span className="hidden sm:inline">| Uninorte</span>
+            <span className={`text-sm sm:text-base md:text-lg font-normal tracking-tight transition-colors duration-300 ${scrolled ? 'text-emerald-950 font-serif' : 'text-emerald-900 font-serif'}`}>
+              {t('nav.brand')}
             </span>
           </div>
           
