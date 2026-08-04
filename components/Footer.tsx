@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
-          <p>&copy; {new Date().getFullYear()} {t('hero.title')} {t('hero.title.suffix')}. {t('footer.rights')}</p>
+          <p>&copy; {new Date().getFullYear()} {t('nav.brand')}. {t('footer.rights')}</p>
           <div className="mt-2 md:mt-0 space-x-4">
               <span>Rafik Neme Lab</span>
           </div>
