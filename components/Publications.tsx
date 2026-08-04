@@ -105,45 +105,50 @@ const publications: Publication[] = [
 ];
 
 const Publications: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
 
   return (
-    <section id="publicaciones" className="py-24 bg-white">
+    <section id="publicaciones" className="py-20 bg-[#FAF9F5]">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('pubs.title')}</h2>
-          <div className="w-20 h-1 bg-emerald-600 mx-auto rounded-full"></div>
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-tropico-700 bg-tropico-100 px-3 py-1 rounded-full border border-tropico-200">
+            {language === 'es' ? 'Producción Científica' : 'Scientific Output'}
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-sans font-extrabold text-slate-900 mt-4 mb-4 tracking-tight">
+            {t('pubs.title')}
+          </h2>
+          <div className="w-16 h-1 bg-tropico-600 mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid gap-6">
+        <div className="grid gap-5">
           {publications.map((pub, index) => (
             <div 
               key={index} 
-              className="group p-6 border border-slate-100 rounded-xl hover:border-emerald-200 hover:bg-slate-50 transition-all duration-300"
+              className="group p-6 bg-white border border-slate-200/80 rounded-2xl hover:border-tropico-400 hover:shadow-sm transition-all duration-200"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-grow">
                   <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <div className="flex items-center gap-1.5 px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded-md">
-                      <FileText className="w-3.5 h-3.5" />
-                      <span className="text-[10px] font-bold uppercase tracking-wider">
+                    <div className="flex items-center gap-1.5 px-2.5 py-0.5 bg-tropico-100 text-tropico-900 rounded-md border border-tropico-200/80">
+                      <FileText className="w-3.5 h-3.5 text-tropico-700" />
+                      <span className="text-[11px] font-mono font-bold">
                         {pub.year}
                       </span>
                     </div>
-                    <span className="text-xs font-medium text-slate-500 italic">
+                    <span className="text-xs font-mono text-tropico-800 font-medium">
                       {pub.journal}
                     </span>
                     {pub.citedBy && (
-                      <div className="flex items-center gap-1 text-xs text-slate-400">
-                        <Quote className="w-3 h-3 rotate-180" />
+                      <div className="flex items-center gap-1 text-xs text-slate-500 font-mono">
+                        <Quote className="w-3 h-3 rotate-180 text-tierra-600" />
                         <span>{t('pubs.cited')}: {pub.citedBy}</span>
                       </div>
                     )}
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors leading-snug">
+                  <h3 className="text-base sm:text-lg font-sans font-bold text-slate-900 mb-2 group-hover:text-tropico-800 transition-colors leading-snug">
                     {pub.title}
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-xs text-slate-600 font-sans">
                     {pub.authors}
                   </p>
                 </div>
@@ -152,7 +157,7 @@ const Publications: React.FC = () => {
                     href={pub.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="p-2 text-slate-300 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-all flex-shrink-0"
+                    className="p-2.5 text-slate-400 hover:text-tropico-800 hover:bg-tropico-50 rounded-xl transition-all flex-shrink-0"
                     aria-label="View publication"
                   >
                     <ExternalLink className="w-5 h-5" />
@@ -168,10 +173,10 @@ const Publications: React.FC = () => {
             href="https://scholar.google.com/citations?user=X7W0MwQAAAAJ&hl=es" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-slate-900 text-white rounded-full font-medium hover:bg-emerald-800 transition-colors shadow-sm"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-tropico-900 text-white rounded-xl text-sm font-semibold hover:bg-tropico-950 transition-colors shadow-sm"
           >
             {t('pubs.scholar')}
-            <ExternalLink className="ml-2 w-4 h-4" />
+            <ExternalLink className="w-4 h-4" />
           </a>
         </div>
       </div>

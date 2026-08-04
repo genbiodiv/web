@@ -105,34 +105,44 @@ const ResearchLines: React.FC = () => {
   ];
 
   return (
-    <section id="investigacion" className="py-24 bg-slate-50">
+    <section id="investigacion" className="py-20 bg-[#FAF9F5]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-20">
-          <h2 className="text-3xl font-serif text-slate-900 mb-6">{t('research.title')}</h2>
-          <p className="text-slate-600 max-w-2xl text-lg font-light">
+        <div className="mb-16">
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-tropico-700 bg-tropico-100 px-3 py-1 rounded-full border border-tropico-200">
+            {language === 'es' ? 'Líneas de Investigación' : 'Research Focus'}
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-sans font-extrabold text-slate-900 mt-4 mb-4 tracking-tight">
+            {t('research.title')}
+          </h2>
+          <p className="text-slate-600 max-w-2xl text-base sm:text-lg font-sans">
             {t('research.subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
           {pillars.map((pillar, idx) => (
-            <div key={idx} className="group">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="text-emerald-700 bg-emerald-50 p-3 rounded-full">
+            <div key={idx} className="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm flex flex-col">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-tropico-800 bg-tropico-100 p-3.5 rounded-xl border border-tropico-200/60">
                     {pillar.icon}
                 </div>
-                <h3 className="text-2xl font-serif text-slate-900">{pillar.title}</h3>
+                <div>
+                  <h3 className="text-xl font-sans font-bold text-slate-900">{pillar.title}</h3>
+                  <p className="text-xs font-mono text-tropico-700 uppercase tracking-wider mt-0.5">
+                    {language === 'es' ? 'Pilar de Investigación' : 'Research Pillar'}
+                  </p>
+                </div>
               </div>
               
-              <p className="text-slate-500 mb-8 italic border-l-2 border-emerald-100 pl-4">
+              <p className="text-slate-600 text-sm mb-8 bg-slate-50 p-4 rounded-xl border-l-4 border-tropico-600 font-sans leading-relaxed">
                 {pillar.description}
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4 mt-auto">
                 {pillar.projects.map((project, pIdx) => (
-                  <div key={pIdx} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100">
-                    <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-2">{project.title}</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">{project.desc}</p>
+                  <div key={pIdx} className="p-4 rounded-xl bg-[#FAF9F5] hover:bg-tropico-50/50 transition-colors border border-slate-200/50">
+                    <h4 className="text-xs font-mono font-bold text-tropico-900 uppercase tracking-wider mb-1.5">{project.title}</h4>
+                    <p className="text-slate-600 text-xs leading-relaxed font-sans">{project.desc}</p>
                   </div>
                 ))}
               </div>

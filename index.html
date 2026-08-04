@@ -7,21 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-      @font-face {
-        font-family: 'Astonpoliz';
-        src: url('/fonts/Astonpoliz.ttf') format('truetype'),
-             url('/fonts/Astonpoliz.otf') format('opentype');
-        font-weight: 300 900;
-        font-style: normal;
-        font-display: swap;
-      }
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
       }
-      h1, h2, h3, .serif, .font-serif {
-        font-family: 'Astonpoliz', 'Playfair Display', serif !important;
+      h1, h2, h3, h4, h5, h6, .font-serif, .serif {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
       }
       .scroll-smooth {
         scroll-behavior: smooth;
@@ -31,9 +23,36 @@
       tailwind.config = {
         theme: {
           extend: {
+            colors: {
+              tropico: {
+                50: '#f4f7f4',
+                100: '#e3ebe4',
+                200: '#c5d7c8',
+                300: '#9cbba2',
+                400: '#719a79',
+                500: '#527e5a',
+                600: '#3d6345',
+                700: '#325039',
+                800: '#2a4130',
+                900: '#233629',
+                950: '#121e16',
+              },
+              tierra: {
+                50: '#fbf9f5',
+                100: '#f4efe4',
+                200: '#e6dbca',
+                300: '#d5c1a7',
+                400: '#c1a282',
+                500: '#b08b68',
+                600: '#9d7455',
+                700: '#815c46',
+                800: '#6b4c3c',
+                900: '#584033',
+              }
+            },
             fontFamily: {
-              serif: ['Astonpoliz', 'Playfair Display', 'serif'],
-              sans: ['Inter', 'sans-serif'],
+              serif: ['Plus Jakarta Sans', 'sans-serif'],
+              sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
             }
           }
         }
@@ -52,7 +71,7 @@
 }
 </script>
 </head>
-  <body class="bg-slate-50 text-slate-800 antialiased scroll-smooth">
+  <body class="bg-[#FAF9F5] text-slate-800 antialiased scroll-smooth selection:bg-emerald-800 selection:text-white">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

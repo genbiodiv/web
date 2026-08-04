@@ -37,7 +37,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeHash = '#inicio' }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center cursor-pointer" onClick={() => navigateTo('#inicio')}>
-            <span className="text-base sm:text-lg font-serif font-medium tracking-tight text-slate-900 hover:text-emerald-700 transition-colors">
+            <span className="text-base sm:text-lg font-sans font-bold tracking-tight text-emerald-950 hover:text-emerald-700 transition-colors">
               {t('nav.brand')}
             </span>
           </div>
@@ -45,10 +45,10 @@ const Navigation: React.FC<NavigationProps> = ({ activeHash = '#inicio' }) => {
           <div className="hidden md:flex items-center space-x-6">
             <button
               onClick={() => navigateTo('#inicio')}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-xs uppercase tracking-wider font-semibold transition-colors ${
                 activeHash === '#inicio' || activeHash === ''
-                  ? 'text-emerald-700 font-semibold border-b-2 border-emerald-600 pb-0.5'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'text-emerald-800 font-bold border-b-2 border-emerald-700 pb-0.5'
+                  : 'text-slate-600 hover:text-emerald-900'
               }`}
             >
               {language === 'es' ? 'Inicio' : 'Home'}
@@ -60,10 +60,10 @@ const Navigation: React.FC<NavigationProps> = ({ activeHash = '#inicio' }) => {
                 <button
                   key={link.name}
                   onClick={() => navigateTo(link.href)}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-xs uppercase tracking-wider font-semibold transition-colors ${
                     isActive 
-                      ? 'text-emerald-700 font-semibold border-b-2 border-emerald-600 pb-0.5' 
-                      : 'text-slate-600 hover:text-slate-900'
+                      ? 'text-emerald-800 font-bold border-b-2 border-emerald-700 pb-0.5' 
+                      : 'text-slate-600 hover:text-emerald-900'
                   }`}
                 >
                   {link.name}
@@ -73,10 +73,10 @@ const Navigation: React.FC<NavigationProps> = ({ activeHash = '#inicio' }) => {
 
             <button
               onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-200 text-slate-700 hover:bg-slate-50 transition-all ml-2"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-emerald-800/20 text-emerald-900 bg-emerald-50/50 hover:bg-emerald-100/50 transition-all ml-2"
             >
-              <Globe className="w-4 h-4 text-emerald-600" />
-              <span className="text-xs font-bold uppercase">{language === 'es' ? 'EN' : 'ES'}</span>
+              <Globe className="w-3.5 h-3.5 text-emerald-700" />
+              <span className="text-xs font-bold uppercase tracking-wider">{language === 'es' ? 'EN' : 'ES'}</span>
             </button>
           </div>
 

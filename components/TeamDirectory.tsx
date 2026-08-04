@@ -344,13 +344,13 @@ const TEAM_MEMBERS_DATA: TeamMember[] = [
 
 const THEMATIC_AREAS = [
   { es: "Todos", en: "All" },
-  { es: "ADN ambiental, metabarcoding y bioinformática", en: "Environmental DNA, metabarcoding and bioinformatics", color: "from-emerald-500/10 to-teal-500/10 text-emerald-800 border-emerald-200" },
-  { es: "Biodiversidad urbana y gradientes socioambientales", en: "Urban biodiversity and socio-environmental gradients", color: "from-blue-500/10 to-indigo-500/10 text-blue-800 border-blue-200" },
-  { es: "Bosque seco tropical, insectos y colecciones biológicas", en: "Tropical dry forest, insects and biological collections", color: "from-amber-500/10 to-orange-500/10 text-amber-800 border-amber-200" },
-  { es: "Biodiversidad marina, costera y del Caribe colombiano", en: "Marine, coastal and Colombian Caribbean biodiversity", color: "from-cyan-500/10 to-sky-500/10 text-cyan-800 border-cyan-200" },
-  { es: "Genómica evolutiva, ecología molecular y evolución", en: "Evolutionary genomics, molecular ecology and evolution", color: "from-purple-500/10 to-pink-500/10 text-purple-800 border-purple-200" },
-  { es: "Paleontología, geología histórica y evolución de faunas", en: "Paleontology, historical geology and evolution of faunas", color: "from-stone-500/10 to-slate-500/10 text-stone-800 border-stone-200" },
-  { es: "Educación científica, divulgación y herramientas pedagógicas", en: "Science education, scientific communication and pedagogical tools", color: "from-lime-500/10 to-emerald-500/10 text-emerald-800 border-lime-200" },
+  { es: "ADN ambiental, metabarcoding y bioinformática", en: "Environmental DNA, metabarcoding and bioinformatics", color: "bg-tropico-100 text-tropico-900 border-tropico-300/80" },
+  { es: "Biodiversidad urbana y gradientes socioambientales", en: "Urban biodiversity and socio-environmental gradients", color: "bg-tierra-100 text-tierra-900 border-tierra-300/80" },
+  { es: "Bosque seco tropical, insectos y colecciones biológicas", en: "Tropical dry forest, insects and biological collections", color: "bg-amber-100/80 text-amber-950 border-amber-300/80" },
+  { es: "Biodiversidad marina, costera y del Caribe colombiano", en: "Marine, coastal and Colombian Caribbean biodiversity", color: "bg-cyan-100/80 text-cyan-950 border-cyan-300/80" },
+  { es: "Genómica evolutiva, ecología molecular y evolución", en: "Evolutionary genomics, molecular ecology and evolution", color: "bg-emerald-100 text-emerald-950 border-emerald-300/80" },
+  { es: "Paleontología, geología histórica y evolución de faunas", en: "Paleontology, historical geology and evolution of faunas", color: "bg-stone-200/80 text-stone-900 border-stone-300/80" },
+  { es: "Educación científica, divulgación y herramientas pedagógicas", en: "Science education, scientific communication and pedagogical tools", color: "bg-lime-100 text-lime-950 border-lime-300/80" },
 ];
 
 const TeamDirectory: React.FC = () => {
